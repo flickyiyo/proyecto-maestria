@@ -3,7 +3,7 @@ import numpy as np
 num_notes = 96
 samples_per_measure = 96
 
-def midi_to_samples(fname):
+def midi_to_samples(fname: str):
 	has_time_sig = False
 	flag_warning = False
 	mid = MidiFile(fname)
