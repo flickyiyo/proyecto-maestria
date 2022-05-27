@@ -3,7 +3,9 @@ import numpy as np
 num_notes = 96
 samples_per_measure = 96
 
-def midi_to_samples(fname: str):
+incidentes_detected = 0
+
+def midi_to_samples(fname):
 	has_time_sig = False
 	flag_warning = False
 	mid = MidiFile(fname)
@@ -19,9 +21,10 @@ def midi_to_samples(fname: str):
 				ticks_per_measure = new_tpm
 				has_time_sig = True
 	if flag_warning:
+		incidents_detected += 1
 		print("  ^^^^^^ WARNING ^^^^^^")
 		print("    " + fname)
-		print("    Detected multiple distinct time signatures.")
+		print("    Multiples cambios de armadura detectados.")
 		print("  ^^^^^^ WARNING ^^^^^^")
 		return []
 

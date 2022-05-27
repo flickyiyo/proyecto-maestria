@@ -1,4 +1,4 @@
 maestro-v3.0.0
 .ipynb_checkpoints
 *.zip
-__pycache__
+__pycache
